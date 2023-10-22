@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Music</title>
+
+    <script
+      src="https://kit.fontawesome.com/e118440e8d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/styles/indexStyles.css" />
+  </head>
+  <body>
+    <!-- --- Navbar --- -->
+    <nav class="control">
+      <div class="nav-container">
+        <a href="#" class="nav-brand">
+          <i class="fa-solid fa-headphones"></i>
+        </a>
+
+        <div class="dark-mode-toggler">
+          <p>Theme</p>
+          <label for="dark-mode-check">
+            <input id="dark-mode-check" type="checkbox" >
+            <span><i class="fa-solid fa-moon"></i></span>
+          </label>
+        </div>
+
+        <!-- --- Navbar toggler for small screen --- -->
+
+        <button
+          type="button"
+          id="nav-toggler"
+          class="nav-btn right"
+          onclick="toggleClass()"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- --- Nav-Menu --- -->
+
+        <div id="nav-menu" class="nav-menu">
+          <ul>
+            <li>
+              <div class="input-with-button">
+                <span class="search-btn"
+                  ><i class="fa-solid fa-magnifying-glass"></i
+                ></span>
+                <input id="search-song-input" type="text" name="searchField" placeholder="Search" />
+                <button type="button" class="mic-btn">
+                  <i class="fa-solid fa-microphone"></i>
+                </button>
+
+                <div id="search-result" class="search-result overScroll">
+                  <ul id="search-song-result" class="songsList">
+
+                  </ul>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <a href="#" id="bell-icon">
+                <i id="bell" class="fa-solid fa-bell"></i>
+                <span class="notifications">Notifcations</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="profile-image"
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/128/2202/2202112.png"
+                    alt="profile Image"
+                /></span>
+                <span class="prof-sec">Profile</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content overScroll">
+      <div class="player-container control overScroll">
+        <h2 class="section-header">Now Playing</h2>
+
+        <div class="album-art-container">
+          <img
+            id="album-artwork"
+            src=""
+            alt="Album Art"
+          />
+        </div>
+
+        <div class="song-detail">
+          <div class="song-playing-name-artist">
+            <h3 id="album-name"></h3>
+            <h5 id="album-artist"></h5>
+          </div>
+          <div class="like-ban">
+            <a id="add-to-playlist" href="#">
+              <i class="fa-solid fa-plus"></i>
+              <span>Add To Playlist</span>
+            </a>
+            <div id="playlist-options-container" class="playlist-options">
+              <h5>Select Playlist</h5>
+              <form id="select-playlist-form">
+                <select id="playlist-options">
+                  <option value="None">Select Playlist</option>
+                </select>
+
+                <div class="add-playlist-btns">
+                  <button class="blue" type="submit">Ok</button>
+                  <button
+                    id="select-playlist-form-dismiss"
+                    class="red"
+                    type="button"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="audio-playing" class="song-playing-controls">
+          <div class="control-btns">
+            <a id="prev-song-btn" href=""><i class="fa-sharp fa-solid fa-backward-step"></i></a>
+            <a id="pause-song-btn" href=""><i id="pause-button" class="fa-regular fa-circle-play"></i></a>
+            <a id="nxt-song-btn" href=""><i class="fa-solid fa-forward-step"></i></a>
+            <div class="volume-controller">
+              <a id="vol-icon" href=""><i class="fa-solid fa-volume-high"></i></a>
+              <input id="song-vol-btn" type="range" min="0" max="1" step="0.05" value="0.4" />
+            </div>
+          </div>
+          <div class="progress-bar">
+            <div id="actual-time" class="time"></div>
+            <div class="slider">
+              <input id="duration-progress" type="range" min="0" max="100" value="0" />
+            </div>
+            <div id="total-time" class="time"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="songs-collection overScroll">
+        <div class="my-playlist">
+          <h2 class="section-header control">
+            Playlists
+            <span id="create-playlist">
+              <i class="fa-solid fa-plus"></i>
+              <div id="create-playlist-container" class="playlist-options">
+                <h5>Playlist Name</h5>
+                <form id="create-playlist-form">
+                  <input id="create-playlist-input" type="text" placeholder="PlayList Name...">
+  
+                  <div class="add-playlist-btns">
+                    <button id="create-playlist-form-submit" class="blue" type="submit">Ok</button>
+                    <button
+                      id="create-playlist-form-dismiss"
+                      class="red"
+                      type="button"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </span>
+          </h2>
+
+          <div id="all-playlists-container" class="playlists overScroll">
+            <div class="playlist control">
+              <div
+                id="show-hide-playlist"
+                class="playlist-control show-hide-playlist"
+              >
+                <p>Recently Added</p>
+                <p id="playlist-arr">
+                  <span><i class="fa-solid fa-angle-right"></i></span>
+                </p>
+              </div>
+
+              <ul class="songsList">
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-songs">
+          <h2 class="section-header">My Songs</h2>
+
+          <div class="allSongsList control">
+            <div class="playlist-control">
+              <p>Filter By Genre</p>
+              <p>
+                <select id="selected-genre">
+                  <option value="None">Select Genre</option>
+                </select>
+              </p>
+            </div>
+
+            <ul id="all-songs-list" class="songsList overScroll"></ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/scripts/indexScript.js"></script>
+  </body>
+</html>
