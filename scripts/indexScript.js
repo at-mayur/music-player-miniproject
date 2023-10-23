@@ -282,7 +282,7 @@ function createSongsList(songsList, listParentId) {
     const newSongElem = document.createElement("li");
 
     newSongElem.innerHTML = `
-        <div class="curr-playlist-song">
+        <div id="song${ song.id }" class="curr-playlist-song">
             <div class="curr-playlist-song-img">
                 <img src="${song.image}" alt="${song.name}">
             </div>
@@ -292,7 +292,7 @@ function createSongsList(songsList, listParentId) {
                     <h6>${song.artist}</h6>
                 </div>
                 <div>
-                    <a href="#" class="like" data-song-id="${ song.id-1 }"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#" class="like" data-song-index="${ song.id-1 }"><i class="fa-regular fa-heart"></i></a>
                 </div>
             </div>
             
@@ -320,7 +320,7 @@ function handleAddFavourite(){
       event.stopPropagation();
       event.preventDefault();
 
-      const songIndex = Number(event.target.getAttribute("data-song-id"));
+      const songIndex = Number(likeBtn.dataset.songIndex);
 
       myPlaylists.favourites.songs.push(mySongs[songIndex]);
       createSongsList(myPlaylists.favourites.songs, `my-playlist-favourites`);
@@ -512,8 +512,8 @@ enableAddToPlaylist();
 enableCreatePlaylist();
 showPlaylists();
 createSongsList(mySongs, "all-songs-list");
-handleAddFavourite();
 updateGenreList();
 loadSongInPlayer();
 loadPlaylists();
 handleAudioControls();
+handleAddFavourite();
