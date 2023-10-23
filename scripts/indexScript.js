@@ -75,6 +75,7 @@ const mySongs = [
 
 const myPlaylists = {
   recentlyAdded: { name: "Recently Added", songs: mySongs.slice(4) },
+  favourites: {name: "Favaourites", songs: []}
 };
 
 let currentPlayingAudio = document.createElement("audio");
@@ -154,7 +155,7 @@ function enableAddToPlaylist() {
     if(selectPlaylistFormOptions.value!=="None"){
       if(myPlaylists[selectPlaylistFormOptions.value]){
         myPlaylists[selectPlaylistFormOptions.value].songs.push(currPlayingSong);
-        createSongsList(myPlaylists[selectPlaylistFormOptions.value].songs, `my-playlist-${ selectPlaylistFormOptions.value }`)
+        createSongsList(myPlaylists[selectPlaylistFormOptions.value].songs, `my-playlist-${ selectPlaylistFormOptions.value }`);
       }
     }
 
@@ -291,7 +292,7 @@ function createSongsList(songsList, listParentId) {
                     <h6>${song.artist}</h6>
                 </div>
                 <div>
-                    <a href="#" class="like"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#" class="like" data-song-id="${ song.id-1 }"><i class="fa-regular fa-heart"></i></a>
                 </div>
             </div>
             
@@ -306,6 +307,24 @@ function createSongsList(songsList, listParentId) {
     };
 
     allSongsList.append(newSongElem);
+  });
+}
+
+
+// handle adding song as favourite
+function handleAddFavourite(){
+  const likeBtns = document.querySelectorAll(".like");
+
+  likeBtns.forEach((likeBtn) => {
+    likeBtn.onclick = (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+
+      const songIndex = Number(event.target.getAttribute("data-song-id"));
+
+      myPlaylists.favourites.songs.push(mySongs[songIndex]);
+      createSongsList(myPlaylists.favourites.songs, `my-playlist-favourites`);
+    };
   });
 }
 
@@ -493,6 +512,7 @@ enableAddToPlaylist();
 enableCreatePlaylist();
 showPlaylists();
 createSongsList(mySongs, "all-songs-list");
+handleAddFavourite();
 updateGenreList();
 loadSongInPlayer();
 loadPlaylists();
