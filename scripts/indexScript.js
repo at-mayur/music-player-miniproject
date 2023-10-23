@@ -4,7 +4,7 @@ const mySongs = [
     name: "Akhiyaan - Mitraz",
     artist: "Mitraaz",
     genre: "Travel",
-    source: "../audio/Akhiyaan - Mitraz.mp3",
+    source: "./audio/Akhiyaan - Mitraz.mp3",
     image:
       "https://images.unsplash.com/photo-1521337581100-8ca9a73a5f79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bXVzaWMlMjBhcnRpc3RzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
   },
@@ -13,7 +13,7 @@ const mySongs = [
     name: "Baarat",
     artist: "Ritwiz, Nucleya",
     genre: "Country",
-    source: "../audio/Baarat.mp3",
+    source: "./audio/Baarat.mp3",
     image:
       "https://images.unsplash.com/photo-1573253286301-35b8d29ac06f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFkZWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
   },
@@ -22,7 +22,7 @@ const mySongs = [
     name: "Jugnu",
     artist: "Badshah",
     genre: "Club",
-    source: "../audio/Jugnu.mp3",
+    source: "./audio/Jugnu.mp3",
     image:
       "https://images.unsplash.com/photo-1621784166258-c6fdfff31879?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGFydGlzdHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
   },
@@ -31,7 +31,7 @@ const mySongs = [
     name: "Mannat - Darshan Raval",
     artist: "Darshan Raval",
     genre: "Travel",
-    source: "../audio/Mannat.mp3",
+    source: "./audio/Mannat.mp3",
     image:
       "https://images.unsplash.com/photo-1536849249744-44e01e7a089d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fG11c2ljJTIwYWxidW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
   },
@@ -40,7 +40,7 @@ const mySongs = [
     name: "Mera Safar",
     artist: "Iqclipse Nova",
     genre: "Travel",
-    source: "../audio/Mera Safar.mp3",
+    source: "./audio/Mera Safar.mp3",
     image:
       "https://images.unsplash.com/photo-1616431842618-bdf65d9befd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fG11c2ljJTIwYWxidW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
   },
@@ -49,7 +49,7 @@ const mySongs = [
     name: "Nasha - Equals Session",
     artist: "Amar Jalal, IP Singh",
     genre: "Club",
-    source: "../audio/Nasha-Equals Session.mp3",
+    source: "./audio/Nasha-Equals Session.mp3",
     image:
       "https://images.unsplash.com/photo-1504898770365-14faca6a7320?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWMlMjBhbGJ1bXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
   },
@@ -58,7 +58,7 @@ const mySongs = [
     name: "Pasoori",
     artist: "Shae Gill, Ali Sethi",
     genre: "Rock",
-    source: "../audio/Pasoori.mp3",
+    source: "./audio/Pasoori.mp3",
     image:
       "https://images.unsplash.com/photo-1621784166258-c6fdfff31879?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGFydGlzdHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
   },
@@ -67,7 +67,7 @@ const mySongs = [
     name: "Saahiba - Darshan Raval",
     artist: "Darshan Raval",
     genre: "Rock",
-    source: "../audio/Saahiba.mp3",
+    source: "./audio/Saahiba.mp3",
     image:
       "https://images.unsplash.com/photo-1616431842618-bdf65d9befd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fG11c2ljJTIwYWxidW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
   },
